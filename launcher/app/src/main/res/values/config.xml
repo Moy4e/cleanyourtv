@@ -405,6 +405,7 @@
          (many China-market TVs, e.g. Coocaa 8R145), a fresh Home with app_library on would otherwise be
          nearly empty. Empty (off) by default, so existing setups change nothing. -->
     <string-array name="library_apps" translatable="false">
+        <item>com.tcl.appmarket2</item>
     </string-array>
 
     <!-- Packages the App library catalogue never offers, even with app_library on (config.xml
