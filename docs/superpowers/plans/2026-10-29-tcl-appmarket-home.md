@@ -35,40 +35,40 @@
 - Consumes: the existing `library_apps` configuration read by `Config.load()` and `AppAdapter.reload()`.
 - Produces: a release launcher whose Home tile query explicitly includes `com.tcl.appmarket2`.
 
-- [ ] **Step 1: Add the exact package name**
+- [x] **Step 1: Add the exact package name**
 
   Add one item, `com.tcl.appmarket2`, to the existing `library_apps` array. Do not enable the full app library or alter `hidden_apps`, `dock_apps`, or package disable lists.
 
-- [ ] **Step 2: Commit and push the configuration change**
+- [x] **Step 2: Commit and push the configuration change**
 
   Commit the config and accompanying design/plan documents with a focused message, then push `main` to the user's fork so GitHub Actions builds the forked source.
 
-- [ ] **Step 3: Run the online build and verify it**
+- [x] **Step 3: Run the online build and verify it**
 
   Dispatch the fork's CI workflow and wait for completion. Expected: the launcher build/unit-test job succeeds and an `app-release.apk` artifact is available.
 
 ### Task 2: Install and verify on the TV
 
 **Files:**
-- Use: `work/install_t982_launcher.py` and the downloaded CI artifact
+- Use: `../install_t982_launcher.py` and the downloaded CI artifact
 - Test: TV package state, Home resolver, launcher screenshot, and App Market launch
 
 **Interfaces:**
 - Consumes: the successful APK artifact from Task 1.
 - Produces: the updated launcher active on `<tv ip>` with the original installer and stock launcher still recoverable.
 
-- [ ] **Step 1: Transfer and install the artifact**
+- [x] **Step 1: Transfer and install the artifact**
 
   Push the APK to `/data/local/tmp/tvhome.apk` and run the existing helper, which temporarily disables only `com.android.packageinstaller`, installs the APK, and restores the installer in a `finally` block.
 
-- [ ] **Step 2: Verify package safety and Home resolution**
+- [x] **Step 2: Verify package safety and Home resolution**
 
   Confirm `com.tcl.appmarket2`, `com.android.packageinstaller`, and `com.tcl.cyberui` are enabled; confirm the seven previously disabled packages are unchanged; confirm Home resolves to `com.gathin.tvhome/.MainActivity`.
 
-- [ ] **Step 3: Verify the user-visible result**
+- [x] **Step 3: Verify the user-visible result**
 
   Press Home, capture a screenshot, and open the App Market tile. Expected: the tile is visible and the App Market starts normally.
 
-- [ ] **Step 4: Commit the completed change**
+- [x] **Step 4: Commit the completed change**
 
   Record the implementation commit and verification evidence in the final handoff, without deleting the rollback artifacts or disabling ADB while the user is still testing.
