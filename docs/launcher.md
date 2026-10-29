@@ -15,6 +15,8 @@ The **TV** needs Android 8.0 (API 26) or newer: `minSdk` is a compile-time floor
 `ro.build.version.sdk` before it builds, so an older set is told both numbers instead of failing at
 `pm install` (see [Troubleshooting](TROUBLESHOOTING.md) for what is left on such a set).
 
+Task-specific design notes and implementation plans are indexed in [`docs/superpowers/`](superpowers/README.md).
+
 ## Build it yourself
 
 It needs JDK 17 and Android SDK platform 34. On macOS: `brew install openjdk@17 android-commandlinetools`

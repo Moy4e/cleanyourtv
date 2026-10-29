@@ -55,7 +55,7 @@
 
 **Interfaces:**
 - Consumes: the successful APK artifact from Task 1.
-- Produces: the updated launcher active on `172.16.1.250` with the original installer and stock launcher still recoverable.
+- Produces: the updated launcher active on `<tv ip>` with the original installer and stock launcher still recoverable.
 
 - [ ] **Step 1: Transfer and install the artifact**
 
